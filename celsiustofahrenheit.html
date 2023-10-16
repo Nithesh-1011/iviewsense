@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: linear-gradient(to top right,rgb(0, 0, 0),rgb(91, 38, 63),rgb(159, 113, 136));
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
+         .container{
+             width: 80%;
+             height: 50%;
+             background-color: rgba(255, 255, 255, 0.156);
+             border-radius: 20px;
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
+             justify-content: space-around;
+             
+         }
+         h2,h3{
+             color: rgb(0, 0, 0);
+             font-size: larger;
+             text-transform: uppercase;
+             background-color: rgba(255, 255, 255, 0.4);
+             border-radius: 20px;
+             padding:1px 1%;
+         }
+         input{
+             font-weight: bold;
+         }
+         
+         button{
+             background-color: rgb(183, 54, 3);
+             border-radius: 20px;
+             padding:3px 1%;
+             box-shadow:rgb(41, 41, 41) 2px 2px 2px;
+         }
+         output{
+             font-size: 13px;
+             background-color: rgba(255, 255, 255, 0.082);
+             width: 5.6%;
+             height: 6%;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             border-radius: 20px;
+             box-shadow:rgb(41, 41, 41) 3px 3px 3px;
+             font-size: large;
+             border: 1px solid rgba(255, 255, 255, 0.434);
+         
+         }
+    </style>
+    <script>
+        function celsiusToFahrenheit(celsius) {
+            return (celsius * 9 / 5) + 32;
+          }
+            function convertCelsiusToFahrenheit() {
+            const celsiusInput = document.getElementById("celsius");
+            const fahrenheitOutput = document.getElementById("fahrenheit");
+            const fahrenheitTemperature = celsiusToFahrenheit(celsiusInput.value);
+        
+            fahrenheitOutput.textContent = fahrenheitTemperature;
+          }
+        
+    </script>
+    
+</head>
+<body>
+    <div class="container">
+        <h2>temperature converter</h2>
+        <h3>celcius to fahrenheit</h3>
+        <input type="number" id="celsius" placeholder="Enter Celsius temperature">
+        <button type="button" id="convert" onclick="convertCelsiusToFahrenheit()">Convert</button>
+        <output id="fahrenheit"></output>
+    </div>
+    
+</body>
+</html>
