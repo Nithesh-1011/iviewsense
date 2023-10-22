@@ -54,8 +54,9 @@
             
             const rda = principal * ( 1+ rate * time);
             
-
-            document.getElementById("rdr").textContent ="your rd is ₹ "+rda; 
+            let rdaa = Math.trunc(rda);
+        
+            document.getElementById("rdr").textContent ="your rd is ₹ "+rdaa; 
     
         }
        
