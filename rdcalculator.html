@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+            align-items: center;
+            background-image: linear-gradient(to right , rgb(94, 168, 182) , rgb(18, 246, 196));
+        }
+        .container{
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid white;
+            border-radius: 20px;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.189);
+        }
+        label{
+            font-size: 18px;
+            color: rgb(35, 35, 72);
+        }
+        input{
+            width: 25%;
+        }
+        button{
+            background-color: rgb(99, 255, 96);
+            width: 75px;
+            border-radius: 5px;
+            border: 2px solid white;
+            cursor: pointer;
+        }
+        output{
+            background-color: aliceblue;
+            border-radius: 5px;
+            border: 2px solid  rgb(99, 255, 96);
+            padding: 2px 4px;
+            color: rgb(79, 83, 156);
+        }
+    </style>
+    <script>
+        function calculaterd(){
+            const monthly= parseFloat(document.getElementById("monthly").value);
+            const interest = parseFloat(document.getElementById("interest").value);
+            const time = parseFloat(document.getElementById("time").value);
+
+            const rate = interest / 100 /12;
+            const t = time;
+            
+            const rda = monthly *(t + 1) * t / 2 * (1 + rate);
+
+            let rdaa = Math.trunc(rda);
+            
+
+            document.getElementById("rdr").textContent ="your rd is ₹ "+rdaa; 
+    
+        }
+       
+    </script>
+</head>
+<body>
+    <div class="container">
+        <center><h2>RD Calculator</h2></center>
+        <label for="monthly amount">Monthly Amount in (₹)</label>
+        <input type="number" id="monthly"> <br>
+        <label for="interest">Interest Rate in (%)</label>
+        <input type="number" id="interest" ><br>
+        <label for="time">Time in months</label>
+        <input type="number" id="time"><br>
+        <center><button onclick="calculaterd()">calculate</button><center><br>
+        <center><output id="rdr">your rd is</output></center><br>
+    </div>
+</body>
+</html>
+
+
