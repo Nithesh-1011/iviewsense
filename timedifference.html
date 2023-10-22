@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: linear-gradient(to right, rgb(245, 150, 161), rgb(251, 75, 192));
+            display: flex;
+            justify-content: center;
+            margin: 0%;
+            height: 100vh;
+            align-items: center;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.358);
+            border-radius: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.536);
+        }
+        button{
+            background-color: rgb(255, 96, 128);
+            width: 75px;
+            border-radius: 5px;
+            border: 2px solid white;
+            cursor: pointer;
+        }
+        output{
+            background-color: aliceblue;
+            border-radius: 5px;
+            border: 2px solid rgb(255, 96, 128);
+            padding: 2px 4px;
+            color: rgb(196, 65, 126);
+        }
+    </style>
+    <script>
+        function calculate(){
+            const s = document.getElementById("start").value; 
+            const e = document.getElementById("end").value;  
+
+            const startparts = s.split(":");
+            const endparts = e.split(":");
+
+            const starthours = parseInt(startparts[0]);
+            const starminutes = parseInt(startparts[1]);
+
+            const endhours = parseInt(endparts[0]);
+            const endminutes = parseInt(endparts[1]);
+
+            const diffh = endhours - starthours;
+            const diffm = endminutes - starminutes;
+
+            document.getElementById("output").textContent = "Time difference is " + diffh + " hours and " + diffm + " minutes";  
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Time Difference Calculator</h2>
+        <h3>Start Time</h3>
+        <input type="time" id="start"><br>
+        <h3>End Time</h3>
+        <input type="time" id="end"><br>
+        <button onclick="calculate()">Calculate</button><br>
+        <output id="output">Time difference is:</output><br>
+    </div>
+</body>
+</html>
