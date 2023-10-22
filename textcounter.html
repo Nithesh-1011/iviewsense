@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Text Count</title>
+    <style>
+        body{
+            background-image: linear-gradient(to right , rgba(118, 11, 241, 0.642),rgb(130, 122, 222),rgb(134, 44, 144));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0%;
+        }
+        h2{
+            color:rgb(47, 47, 47);
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.507);
+            width: 60%;
+            background-color: rgba(255, 255, 255, 0.142);
+            box-shadow: 3px 3px 3px rgb(144, 83, 143);
+        } 
+        textarea{
+            padding: 5%;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.507);
+            background-color: rgba(208, 195, 247, 0.673);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Enter Text To Count</h2>
+        <textarea id="input" rows="4" cols="20"></textarea>
+        <h2>Character Count: <span id="count">0</span></h2>
+    </div>
+    <script>
+        const input = document.getElementById('input');
+        const count = document.getElementById('count');
+
+        input.addEventListener('input', function() {
+        count.textContent =input.value.length;
+        });
+    </script>
+</body>
+</html>
