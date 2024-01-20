@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const dolphinsscore1 = [44,23,71];
+        const koalasscore1 = [65,54,49];
+        const dolphinsscore2 = [85,54,41];
+        const koalasscore2 = [23,34,27];
+
+
+        
+        function winner(koalas,dolphins){
+
+            function calculateAverage(array) {
+                const sum = array.reduce((acc, curr) => acc + curr, 0);
+                const average = sum / array.length;
+                return average; 
+            }
+    
+            const dolphins1= calculateAverage(dolphins);
+            const koalas1 = calculateAverage(koalas);
+
+            if (koalas1 > dolphins1 && koalas1 >= (2*dolphins1) ){
+                console.log("koalas are the winners!");
+             }else if ( dolphins1 > koalas1 && dolphins1 >= (2*koalas1)) {
+                console.log("dolphins are the winners!");
+             }else{
+                console.log("no winner");
+             }
+        }
+        
+         winner(dolphinsscore1 , koalasscore1);
+         winner(dolphinsscore2 , koalasscore2);
+    </script>
+</body>
+</html>
