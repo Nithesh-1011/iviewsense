@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: linear-gradient(to top right,rgb(150, 86, 213),rgb(76, 111, 199),rgb(159, 113, 136));
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
+         .container{
+             width: 80%;
+             height: 300px;
+             background-color: rgba(255, 255, 255, 0.156);
+             border-radius: 20px;
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
+             justify-content: space-around;
+             
+         }
+         h2{
+             color: rgb(0, 0, 0);
+             font-size: larger;
+             text-transform: uppercase;
+             background-color: rgba(255, 255, 255, 0.4);
+             border-radius: 20px;
+             padding:1px 1%;
+         }
+         input{
+             font-weight: bold;
+             width: 200px;
+             
+         }
+         
+         
+         button{
+             background-color: rgb(93, 186, 253);
+             border-radius: 20px;
+             padding:3px 1%;
+             box-shadow:rgb(41, 41, 41) 2px 2px 2px;
+             cursor: pointer;
+             border: 1px solid white;
+             border-style:outset;
+         }
+         output{
+             font-size: 13px;
+             background-color: rgba(255, 255, 255, 0.082);
+             height: 6%;
+             min-width: 100px;
+             padding: 1%;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             border-radius: 20px;
+             box-shadow:rgb(41, 41, 41) 3px 3px 3px;
+             font-size: large;
+             border: 1px solid rgba(255, 255, 255, 0.434);
+             
+         
+         }
+    </style>
+    <script> 
+        function calculatebmi() {  
+            const weightm = document.getElementById("weightm").value;
+            const heightm = document.getElementById("heightm").value;
+            const heightmm = heightm / 100;
+            const bmim = weightm / (heightmm * heightmm);
+            
+            const weightj = document.getElementById("weightj").value;
+            const heightj = document.getElementById("heightj").value;
+            const heightjj = heightj / 100;
+            const bmij = weightj / (heightjj * heightjj);
+
+            if (bmim > bmij) {
+                document.getElementById("bmio").textContent = `Mark's BMI (${bmim.toFixed(1)}) is higher than John's BMI (${bmij.toFixed(1)})!`;
+            } else {
+                document.getElementById("bmio").textContent = `John's BMI (${bmij.toFixed(1)}) is higher than Mark's BMI (${bmim.toFixed(1)})!`;
+            }
+        }
+    </script>
+    
+</head>
+<body>
+    <div class="container">
+        <h2>bmi</h2>
+        <div class="mark"> 
+            <input type="number" id="weightm" placeholder="Enter mark weight in 'kg'"> 
+            <input type="number" id="heightm" placeholder="Enter mark height in 'centimetre'">
+            </div>
+        <div class="john">
+            <input type="number" id="weightj" placeholder="Enter john weight in 'kg'">
+            <input type="number" id="heightj" placeholder="Enter john height in 'centimetre'"> 
+        </div>
+        <button type="button" id="calculate" onclick="calculatebmi()">Calculate</button>
+        <output id="bmio"></output>
+    </div>
+    
+</body>
+</html>
