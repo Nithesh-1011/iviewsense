@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const dolphinsscore1 = [96, 108, 89];
+        const koalasscore1 = [88, 91, 110];
+        const dolphinsscore2 = [97, 112, 101];
+        const koalasscore2 = [109, 95, 123];
+        const dolphinsscore3 = [97, 112, 101];
+        const koalasscore3 = [109, 95, 106];
+
+        
+        function winner(koalas,dolphins){
+
+            function calculateAverage(array) {
+                const sum = array.reduce((acc, curr) => acc + curr, 0);
+                const average = sum / array.length;
+                return average; 
+            }
+    
+            const dolphins1= calculateAverage(dolphins);
+            const koalas1 = calculateAverage(koalas);
+
+            if (koalas1 > dolphins1 && koalas1 >= 100 ){
+                console.log("koalas are the winners!");
+             }else if (koalas1 == dolphins1 && koalas1 & dolphins1 >= 100 ){
+                console.log("draw");
+             }else if ( dolphins1 > koalas1 && dolphins1 >= 100) {
+                console.log("dolphins are the winners!");
+             }else{
+                console.log("no winner");
+             }
+        }
+
+        const avg1 = winner(dolphinsscore1 , koalasscore1)
+        const avg2 = winner(dolphinsscore2 , koalasscore2)
+        const avg3 = winner(dolphinsscore3 , koalasscore3)
+        console.log(avg1 , avg2 , avg3);
+    </script>
+</body>
+</html>
